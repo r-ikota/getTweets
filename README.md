@@ -16,7 +16,7 @@ For Windows
 
 How to use
 
-    getTweets TwitterJP 2018/06/01 2018/06/04
+    getTweets TwitterJP -s 2019/12/15 -t 2019/12/16 -o out.txt
 
 Preparation
 

@@ -44,6 +44,7 @@ def get_args():
     parser.add_argument('user', help="user account name")
     parser.add_argument('-s', '--since')
     parser.add_argument('-t', '--till', default=today)
+    parser.add_argument('-o', '--out')
 
     return parser.parse_args()
 
@@ -111,8 +112,12 @@ def main():
         if max_id: max_id -= 1
         round += 1
 
+    if args.out:
+        outfile = args.out
+    else:
+        outfile = args.user + '.txt'
 
-    fd = open('out.txt', 'wb')
+    fd = open(outfile, 'wb')
     rt_stat = 'retweeted_status'
     for s in to_record_msgs:
         if rt_stat in s:
